@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+    // 'use strict' impede que variáveis sejam declaradas
+    // sem o uso de let, var ou const
+    // iniciar variaveis direto é má prática
+
+    /* 
+        Operadores RELACIONAIS
+        > Maior que
+        < Menor que
+        >= Maior ou igual que
+        <= Menor ou igual que
+        == Testando a igualdade
+        === Operador de igualdade estrita ou 'exatamente igual'
+        != Diferente
+        !== Estritamente diferente
+    */
+
+    let a = 3
+    let b = 6
+    let c = '6'
+    alert(b !== c)
+
+    // variaveis sem valor inicial são iniciadas com o valor 'undefined'
+    // declarando uma por uma
+
+
+    //declarando três de uma vez
+    let x, y, z
+
+    let v1 = 'Teste' //string
+    let v2 = 2.75 //number
+    let v3 = true //boolean
+    let v4 = 70 //number
+    let v5 = "Outro teste" //string
+    let v6
+    let v7 = '356'
+
+    // mudando o valor de uma variável
+    v2 = 'Batata'
+
+    // Descobrindo o tipo das variáveis
+    // alert(typeof v2)
+
+    let q1 = 5, q2 = 7, q3 = '4', res
+
+    res = q1 - q2 // subtração
+    res = q1 - q3 // subtração com conversão de string para número
+    res = q1 - v2 // string não-numérica, resultado = NaN
+    res = q1 * q2 // multiplicação
+    res = q1 * q3 // multiplicação com conversão de string
+    res = q1 / q2 // divisão
+    res = q1 / q3
+    res = q1 + q2 // adição
+    res = q1 + q3 // ocorreu uma concatenação. Quando usa '+' com uma string,
+                  // ele concatena ao invés de somar
+    res = q1 + v2
+
+    res = q1 + Number(q3) //transforma a string numérica em número para fazer a soma
+    res = q1 + parseInt(q3)
+    res = q1 ** q2 //potenciação
+    res = q2 % q1 //resto da divisão
+    
+
+
+    </script>
+</head>
+<body>
