@@ -34,25 +34,27 @@
        if(isNaN(num1) || isNaN(num2)) {
            alert('ERRO! Pelo menos um dos números informados é inválido')
        }
-       if (fun == '+') {
-         resultado = num1 + num2
-
-       }
-       else if (fun == '-') {
-        resultado = num1 - num2
-       
-       }
-       else if (fun == '*' || fun == 'x' || fun == 'X') {
-        resultado = num1 * num2
-        
-       }
-        else if (fun == '/' || fun == ':') {
-        resultado = num1 / num2
-        
-       }
        else {
-           document.write('Operador inválido!')
-           temErro = true
+           switch(fun) {
+               case '+':
+                   resultado = num1 + num2
+                   break
+               case '-':
+                   resultado = num1 - num2
+                   break
+               case 'X': //case vazio - pula linha
+               case 'x': //case vazio
+               case '*':
+                   resultado = num1 * num2
+                   break
+               case '/':
+               case ':':
+                   resultado = num1 / num2
+                   break
+               default:
+                   alert('ERRO: operador informado é inválido.')   
+                   temErro = true 
+           }
        }
        if (!temErro) {
            //document.write('Resultado: ' + resultado)
