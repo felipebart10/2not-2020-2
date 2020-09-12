@@ -10,7 +10,18 @@
         // Inicializar variáveis diretamente é má prática de
         // programação
         'use strict'
-        
+        /*
+        Loop da soma dos números até que seja zero
+        */
+       let soma = 0
+       let num 
+       do {
+           num = Number(prompt('Digite um número ou 0 para terminar'))
+           if(!isNaN(num)) {
+               soma += num
+           } 
+       } while(num != 0)
+       document.write('Soma: ' + soma)
     </script>
 </head>
 <body>

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de documento HTML</title>
-    <script>
-        // 'use strict' impede que variáveis sejam declaradas
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modelo de documento HTML</title>
+	<script>
+		// 'use strict' impede que variáveis sejam declaradas
         // sem o uso de let, var ou const
         // Inicializar variáveis diretamente é má prática de
         // programação
@@ -37,10 +38,51 @@
             de decisão switch..case, informe ao usuário a letra correspondente
             ao dígito informado.
         */
-
-    </script>
+        let numero = prompt('Digite o número do dígito da placa')
+        let letra = false
+        if (isNaN(numero) || numero > 9 || numero < 0) {
+            alert('ERRO! Não é um número válido')
+        }
+        else {
+            switch(numero) {
+                case '0':
+                    letra = 'A'
+                    break
+                case '1':
+                    letra = 'B'                    
+                    break
+                case '2':
+                    letra = 'C'
+                    break
+                case '3':
+                    letra = 'D'
+                    break
+                case '4':
+                    letra = 'E'
+                    break
+                case '5':
+                    letra = 'F'
+                    break
+                case '6':
+                    letra = 'G'
+                    break
+                case '7':
+                    letra = 'H'
+                    break
+                case '8':
+                    letra = 'I'
+                    break
+                case '9':
+                    letra = 'J'
+                    break               
+            }
+            alert('Letra correspondente: ' + letra)
+        }
+	</script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
