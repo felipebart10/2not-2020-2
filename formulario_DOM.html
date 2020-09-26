@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        let elemQtd = document.querySelector('#qtd') //forma moderna
+        let elemPrecoUnit = document.getElementById('preco_unit') //forma trad
+        let elemResultado = document.querySelector('#resultado')
+
+        function calcular() {
+            let quantidade = parseFloat(elemQtd.value) //trad.
+            let precoUnit = Number(elemPrecoUnit.value) //moderna
+            let resultado
+
+            //caso ambos os numeros tenham passado na validação
+            if(!isNaN(quantidade) && !isNaN(precoUnit)) {
+                elemResultado.innerText = (quantidade * precoUnit)
+            }
+            else {
+                elemResultado.innerText = ''
+            }
+        }
+
+        elemQtd.addEventListener('change', calcular)
+        elemPrecoUnit.addEventListener('change', calcular)
+
+            
+    </script>
+</head>
+<body>
+
+    <h1>Formulário de cálculo de preços</h1>
+    <div>
+        <label>Nome do produto</label>
+        <input size="50">
+    </div>
+    <div>
+        <label>Quantidade</label>
+        <input id="qtd" type="number">
+    </div>
+    <div>
+        <label>Preço unitário</label>
+        <input id="preco_unit" type="number">
+    </div>
+    <div>
+        <label>Preço TOTAL</label>
+        <span id="resultado"></span>
+    </div>       
+</body>
+</html>
