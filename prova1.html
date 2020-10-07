@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        let kilometro
+        /* para esta etapa, foi feito um For com incremento de 29
+           pensei em fazer o for com incremento de 1 e usar If
+           para printar apenas os múltiplos de 29, mas achei esta
+           forma mais simples e atende exatamente o que o código
+           pedia no enunciado
+        */
+        document.write('Localização das Lombofaixas: <br>')
+        for(kilometro = 29; kilometro <= 400; kilometro += 29) {
+            document.write('km ' + kilometro + '<br>')
+        }
+        /* Na segunda etapa, foi feita a checagem se o input do usuário
+           era inteiro. Se fosse, entraremos no switch case para checar
+           se há alguma coisa no kilometro digitado. Caso o usuário digite '0',
+           o Do é encerrado e o código concluído
+        */ 
+        do {
+            kilometro = parseInt(prompt('Digite o km desejado ou zero para sair'))
+            if (isNaN(kilometro)) { 
+                alert('O km não é um número inteiro!')
+            }
+            else if(kilometro > 400 || kilometro < 0) { //acima de 400 e negativo ele é invalidado
+                alert('O km não faz parte da pista!')                
+            }                
+            else {
+           switch(kilometro) {
+               case 92:
+               case 177: //uso de cases pulando para o próximo
+               case 291:
+               case 388:    
+                   alert('Aqui tem uma Megaloja do Magazine Luiza!')
+                   break
+               case 153:
+               case 356:    
+                   alert('Aqui tem um Drivethru da Rafarillo!')
+                   break
+               case 187:
+                   alert('Aqui tem um Posto de recarga da Viação São José!')
+                   break
+               case 210:
+                   alert('Aqui tem uma filial da padaria Estrela!')
+                   break
+               case 314:
+                   alert('Aqui tem uma fábrica do Jubileu do Amendoim')
+                   break
+               case 367:
+                   alert('Aqui (talvez) tem o Franca AcquaParque Unidade II!')
+                   break
+               case 0:
+                   break                                          
+               default:
+                   alert('Vapo fii, tem nada aqui não! Segue reto toda vida, meu fii!')   
+           }                
+            }
+
+        } while(kilometro != 0)
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

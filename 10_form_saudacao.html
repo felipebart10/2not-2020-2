@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <style>
+        label {
+            /*forçar o modo de exibição em bloco*/
+            display: block;
+        }
+        fieldset label {
+            display: inline;
+        }
+        fieldset {
+            border: 1px solid lightgray;
+            border-radius: 8px;
+            width: 50%;
+        }
+        div {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Formulário de Saudação</h1>
+    <div>
+        <label>Nome</label>
+        <input type="text" id="primeiro-nome" placeholder="Informe seu nome">
+    </div>
+    <div>
+        <label>Sobrenome</label>
+        <input type="text" id="sobrenome" placeholder="Informe seu sobrenome">
+    </div>
+
+    <div>
+        <label>Forma de tratamento</label>
+        <select id="forma-tratamento">
+            <option>Selecione...</option>
+            <option>Vossa Majestade</option>
+            <option>Excelentíssimo</option>
+            <option>Vossa Senhoria</option>
+            <option>Senhor</option>
+            <option>Cremosíssimo</option>
+        </select>
+    </div>
+
+        <fieldset>
+            <legend>Sexo</legend>
+            <input type="radio" id="masculino" name="sexo">
+            <label for="masculino">Masculino</label>
+            <br>
+            <input type="radio" id="feminino" name="sexo">
+            <label for="feminino">Feminino</label>
+        </fieldset>
+
+    <div>
+        <label>Hora do dia</label>
+        <input type="number" id="hora-dia" min="0" max="23">
+    </div>
+    <fieldset>
+        <legend>Exibição da Mensagem</legend>
+        <input type="checkbox" id="alert">
+        <label for="alert">Exibir com alert()</label>
+        <br>  
+        <input type="checkbox" id="document">
+        <label for="document">Exibir documento</label>
+    </fieldset>
+    <div id="saudação"></div>
+    <div>
+        <button id="enviar">Enviar</button>
+    </div>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+    </script>    
+</body>
+</html>
