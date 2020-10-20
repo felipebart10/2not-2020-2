@@ -55,7 +55,7 @@
     <input type="text" id="segundo-numero" placeholder="informe o número...">
   </div>
   <div>
-    <button id="faz-conta">Calcular</button>
+    <button id="botao_calcular">Calcular</button>
   </div>  
   <div id="resultado"></div>   
     <script>
@@ -68,18 +68,21 @@
         const elOperacao = document.getElementById('operacao')
         const elSegundoNumero = document.getElementById('segundo-numero')
         const elResultado = document.getElementById('resultado')
-        const elCalculo = document.getElementById('faz-conta')
+        const elBotao = document.getElementById('botao_calcular')
+        
         function validar() {
             let valido = true
-
+            // Validação se o primeiro número não é vazio e se é um número
             if (elPrimeiroNumero.value=='' || isNaN(elPrimeiroNumero.value)) {
                 alert('Primeiro número inválido')
                 valido = false
             }
+            // Idem a de cima só que para o segundo número
             else if(elSegundoNumero.value=='' || isNaN(elPrimeiroNumero.value)) {
                 alert('Segundo número inválido')
                 valido = false
             }
+            // Se o usuário não sair da opção padrão ('Selecione...'), isso invalida
             else if(elOperacao.value=='Selecione...') {
                 alert('Operador inválido')
                 valido = false
@@ -91,6 +94,8 @@
         function calcular() {
             if(validar()) {
                 let valor_resultado
+                /* Aqui faz uma estrutura condicional para que o cálculo
+                esteja de acordo com a operação escolhida pelo usuário */
                 if(elOperacao.value == '+' ) {
                     valor_resultado = parseFloat(elPrimeiroNumero.value) + parseFloat(elSegundoNumero.value)
                 }
@@ -107,7 +112,7 @@
             }
             
         }
-        elCalculo.addEventListener('click', calcular)
+        elBotao.addEventListener('click', calcular)
 </script>
 </body>
 </html>
