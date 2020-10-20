@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+        <style>
+        label {
+            /*forçar o modo de exibição em bloco*/
+            display: block;
+        }
+        fieldset label {
+            display: inline;
+        }
+        fieldset {
+            border: 1px solid lightgray;
+            border-radius: 8px;
+            width: 50%;
+        }
+        div {
+            margin-bottom: 15px;
+        }
+    </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">FAUSTO GONCALVES CINTRA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">177000.000000000</mso:Order>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">FAUSTO GONCALVES CINTRA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100D1709B3E936BE4488A7EEB682FDD8227</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+  <h1>Calculadora</h1>
+  <div>
+    <label>Primeiro número:</label>
+    <input type="text" id="primeiro-numero" placeholder="informe o número...">
+  </div>
+  <div>
+    <label>Operação:</label>
+    <select id="operacao">
+            <option>Selecione...</option>
+            <option>+</option>
+            <option>-</option>
+            <option>x</option>
+            <option>/</option>
+    </select>
+  </div> 
+  <div>
+    <label>Segundo número:</label>
+    <input type="text" id="segundo-numero" placeholder="informe o número...">
+  </div>
+  <div>
+    <button id="faz-conta">Calcular</button>
+  </div>  
+  <div id="resultado"></div>   
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        const elPrimeiroNumero = document.getElementById('primeiro-numero')
+        const elOperacao = document.getElementById('operacao')
+        const elSegundoNumero = document.getElementById('segundo-numero')
+        const elResultado = document.getElementById('resultado')
+        const elCalculo = document.getElementById('faz-conta')
+        function validar() {
+            let valido = true
+
+            if (elPrimeiroNumero.value=='' || isNaN(elPrimeiroNumero.value)) {
+                alert('Primeiro número inválido')
+                valido = false
+            }
+            else if(elSegundoNumero.value=='' || isNaN(elPrimeiroNumero.value)) {
+                alert('Segundo número inválido')
+                valido = false
+            }
+            else if(elOperacao.value=='Selecione...') {
+                alert('Operador inválido')
+                valido = false
+            }
+
+            return valido
+        }
+
+        function calcular() {
+            if(validar()) {
+                let valor_resultado
+                if(elOperacao.value == '+' ) {
+                    valor_resultado = parseFloat(elPrimeiroNumero.value) + parseFloat(elSegundoNumero.value)
+                }
+                else if(elOperacao.value == '-') {
+                    valor_resultado = parseFloat(elPrimeiroNumero.value) - parseFloat(elSegundoNumero.value)
+                }
+                else if(elOperacao.value == 'x') {
+                    valor_resultado = parseFloat(elPrimeiroNumero.value) * parseFloat(elSegundoNumero.value)
+                }
+                else if(elOperacao.value == '/') {
+                    valor_resultado = parseFloat(elPrimeiroNumero.value) / parseFloat(elSegundoNumero.value)
+                }                
+            elResultado.innerText = 'Resultado: ' + valor_resultado
+            }
+            
+        }
+        elCalculo.addEventListener('click', calcular)
+</script>
+</body>
+</html>
