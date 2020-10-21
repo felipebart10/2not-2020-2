@@ -22,6 +22,21 @@
 
         */
 
+<<<<<<< HEAD
+=======
+        let num
+        do {
+            num = parseInt(prompt('Informe um número inteiro positivo:'))
+        } while(isNaN(num) || num <= 0)
+
+        let fatorial = 1
+        for(let i = num; i > 1; i--) {
+            fatorial *= i // Equivale a: fatorial = fatorial * i
+        }
+
+        alert(`${num}! é igual a ${fatorial}.`)
+
+>>>>>>> 20b0693ef1b0e59c7a02e820cf096cef43555f05
     </script>
 </head>
 <body>

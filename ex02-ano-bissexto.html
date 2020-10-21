@@ -10,6 +10,7 @@
         // Inicializar variáveis diretamente é má prática de
         // programação
         'use strict'
+<<<<<<< HEAD
         let ano = parseInt(prompt('Digite o ano:'))
 
         if (isNaN(ano)) {
@@ -21,6 +22,9 @@
         else {
             alert( ano + ' NÃO é bissexto')
         }
+=======
+        
+>>>>>>> 20b0693ef1b0e59c7a02e820cf096cef43555f05
         /*
             Peça ao usuário para informar um ano e determine
             se é bissexto pela regra:
@@ -28,6 +32,11 @@
             1) Se o ano divide por 400 é bissexto; *OU*
             2) se divide por 4 *E* não divide por 100, é bissexto
 
+<<<<<<< HEAD
+=======
+            OBS.: o cálculo atual começou a valer em 1582
+
+>>>>>>> 20b0693ef1b0e59c7a02e820cf096cef43555f05
             Alguns anos para testar:
             1900: não é
             1600: bissexto
@@ -38,6 +47,39 @@
             2013: não é
       */
 
+<<<<<<< HEAD
+=======
+        let ano = parseInt(prompt('Informe um ano maior ou igual a 1582:'))
+
+        /*
+        if(isNaN(ano) || ano < 1582) {
+            alert('ERRO: o ano informado é inválido')
+        }
+        // Testando a divisibilidade do ano por 400
+        else if(ano % 400 == 0) {
+            alert('O ano informado é BISSEXTO.')
+        }
+        // Ano divide exatamente por 4 E NÃO divide exatamento por 100
+        else if(ano % 4 == 0 && ano % 100 !== 0) {
+            alert('O ano informado é BISSEXTO.')
+        }
+        else {
+            alert('O ano informado NÃO É bissexto.')
+        }
+        */
+
+        if(isNaN(ano) || ano < 1582) {
+            alert('ERRO: o ano informado é inválido')
+        }
+        //else if(ano % 400 == 0 || (ano % 4 == 0 && !(ano % 100 == 0))) {
+        else if(ano % 400 == 0 || (ano % 4 == 0 && ano % 100 !== 0)) {
+            alert('O ano informado é BISSEXTO.')
+        }
+        else {
+            alert('O ano informado NÃO É bissexto.')
+        }
+
+>>>>>>> 20b0693ef1b0e59c7a02e820cf096cef43555f05
     </script>
 </head>
 <body>

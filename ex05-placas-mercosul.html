@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
 <head>
 	<meta charset="UTF-8">
@@ -7,6 +8,14 @@
 	<title>Modelo de documento HTML</title>
 	<script>
 		// 'use strict' impede que variáveis sejam declaradas
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+>>>>>>> 20b0693ef1b0e59c7a02e820cf096cef43555f05
         // sem o uso de let, var ou const
         // Inicializar variáveis diretamente é má prática de
         // programação
@@ -38,6 +47,7 @@
             de decisão switch..case, informe ao usuário a letra correspondente
             ao dígito informado.
         */
+<<<<<<< HEAD
         let numero = prompt('Digite o número do dígito da placa')
         let letra = false
         if (isNaN(numero) || numero > 9 || numero < 0) {
@@ -85,4 +95,52 @@
 
 </body>
 
+=======
+
+        let digito, letra
+        do {
+            digito = parseInt(prompt('Informe o segundo dígito da placa tradicional (0 a 9):'))
+        } while(isNaN(digito) || digito < 0 || digito > 9)
+
+        switch(digito) {
+            case 0:
+                letra = 'A'
+                break
+            case 1:
+                letra = 'B'
+                break
+            case 2:
+                letra = 'C'
+                break
+            case 3:
+                letra = 'D'
+                break
+            case 4:
+                letra = 'E'
+                break
+            case 5: 
+                letra = 'F'
+                break
+            case 6:
+                letra = 'G'
+                break
+            case 7:
+                letra = 'H'
+                break
+            case 8:
+                letra = 'I'
+                break
+            case 9: // ou default:
+                letra = 'J'
+        }
+
+        // Usando string template delimitado por acentos grave (`)
+        alert(`A letra correspondente ao dígito ${digito} é ${letra}.`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+>>>>>>> 20b0693ef1b0e59c7a02e820cf096cef43555f05
 </html>
