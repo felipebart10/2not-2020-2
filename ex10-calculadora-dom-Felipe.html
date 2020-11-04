@@ -73,12 +73,12 @@
         function validar() {
             let valido = true
             // Validação se o primeiro número não é vazio e se é um número
-            if (elPrimeiroNumero.value=='' || isNaN(elPrimeiroNumero.value)) {
+            if (elPrimeiroNumero.value=='' || isNaN(parseFloat(elPrimeiroNumero.value))) {
                 alert('Primeiro número inválido')
                 valido = false
             }
             // Idem a de cima só que para o segundo número
-            else if(elSegundoNumero.value=='' || isNaN(elPrimeiroNumero.value)) {
+            else if(elSegundoNumero.value=='' || isNaN(parseFloat(elPrimeiroNumero.value))) {
                 alert('Segundo número inválido')
                 valido = false
             }
@@ -108,7 +108,7 @@
                 else if(elOperacao.value == '/') {
                     valor_resultado = parseFloat(elPrimeiroNumero.value) / parseFloat(elSegundoNumero.value)
                 }                
-            elResultado.innerText = 'Resultado: ' + valor_resultado
+            elResultado.innerText = 'Resultado: ' + valor_resultado.toLocaleString('pt-BR')
             }
             
         }
