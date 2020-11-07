@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de documento HTML</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modelo de documento HTML</title>
 
 </head>
 
 <body>
-<h1>Número a inserir</h1>
-<input type="number" id="campo_num">
-<button id="botao_calcular">Inserir</button>
-<div id="resultado"></div>
+	<h1>Número a inserir</h1>
+	<input type="number" id="campo_num">
+	<button id="botao_calcular">Inserir</button>
+	<div id="resultado"></div>
 
 
-    <script>
-        // 'use strict' impede que variáveis sejam declaradas
+	<script>
+		// 'use strict' impede que variáveis sejam declaradas
         // sem o uso de let, var ou const
         // Inicializar variáveis diretamente é má prática de
         // programação
@@ -68,11 +68,14 @@
                     vetor.push(elCampo_num.value)
                 }
                 else if(vetor.length == 1) {
-                    if (elCampo_num.value > vetor[0]) {
+                    if (elCampo_num.value > vetor[0] && elCampo_num.value != vetor[0]) {
                         vetor.push(elCampo_num.value)
                     }
-                    else {
+                    else if (elCampo_num.value != vetor[0]) {
                         vetor.splice(0, 0, elCampo_num.value)
+                    }
+                    else {
+                        alert('Número igual ao primeiro!')
                     }
                     
                 }                
@@ -80,6 +83,11 @@
                     for(let numero of vetor) {
                         if (parseInt(elCampo_num.value) < parseInt(numero)) {
                             vetor.splice(vetor.indexOf(numero), 0, parseInt(elCampo_num.value))
+                            break
+                        }
+
+                        else if (parseInt(elCampo_num.value) == parseInt(numero)) {
+                            alert('Número já existente!')
                             break
                         }
 
@@ -96,7 +104,7 @@
 
         elBotao.addEventListener('click', inserir)
 
-    </script>
+	</script>
 </body>
 
 </html>
