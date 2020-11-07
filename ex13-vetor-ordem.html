@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modelo de documento HTML</title>
+
+</head>
+
+<body>
+<h1>Número a inserir</h1>
+<input type="number" id="campo_num">
+<button id="botao_calcular">Inserir</button>
+<div id="resultado"></div>
+
+
     <script>
         // 'use strict' impede que variáveis sejam declaradas
         // sem o uso de let, var ou const
@@ -37,12 +47,56 @@
             resultados. Para gerar a exibição, faça um loop for..of.
 
         */
-        
+        const elCampo_num = document.getElementById('campo_num')
+        const elBotao = document.getElementById('botao_calcular')
+        const elResultado = document.getElementById('resultado')
+        let vetor = []
+        console.log(elBotao)
+
+        function validar() {
+            let valido = true
+            // Validação se o número não é vazio e se é um número
+            if (elCampo_num.value=='' || isNaN(parseFloat(elCampo_num.value))) {
+                alert('Número inválido')
+                valido = false
+            }
+            return valido
+        }
+        function inserir() {
+            if (validar()) {
+                if(vetor.length == 0) {
+                    vetor.push(elCampo_num.value)
+                }
+                else if(vetor.length == 1) {
+                    if (elCampo_num.value > vetor[0]) {
+                        vetor.push(elCampo_num.value)
+                    }
+                    else {
+                        vetor.splice(0, 0, elCampo_num.value)
+                    }
+                    
+                }                
+                else {
+                    for(let numero of vetor) {
+                        if (parseInt(elCampo_num.value) < parseInt(numero)) {
+                            vetor.splice(vetor.indexOf(numero), 0, parseInt(elCampo_num.value))
+                            break
+                        }
+
+                        else if (parseInt(elCampo_num.value) > parseInt(vetor[vetor.length - 1]) && parseInt(elCampo_num.value) != parseInt(numero)) {
+                            vetor.push(parseInt(elCampo_num.value))
+                            break
+                        }
+                    }
+
+                }
+            }
+        elResultado.innerText = vetor
+        }
+
+        elBotao.addEventListener('click', inserir)
+
     </script>
-</head>
-
-<body>
-
 </body>
 
 </html>
