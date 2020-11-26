@@ -50,9 +50,9 @@
             string_padrao = string_padrao + '<br>' + carac.repeat(i)
             i = i + 1
         } while (i <= parseInt(num))
-        document.write(string_padrao)
+        elResultado.innerHTML = string_padrao
     }        
-    elBotao.addEventListener('click', padrao_texto('s', 10))
+    elBotao.addEventListener('click', padrao_texto('+', 10))
     </script>
 </body>
 
