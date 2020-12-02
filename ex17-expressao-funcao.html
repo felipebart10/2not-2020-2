@@ -22,7 +22,18 @@
             Tente chamar a expressão de função ANTES e DEPOIS de
             declará-la. Em que situação a chamada funciona?
         */
+        alert(maior_menor(1,2))
 
+        function maior_menor(num1, num2) {
+            let resultado = 0
+            if (num1>num2) {
+                resultado = -1
+            }
+            if (num1<num2) {
+                resultado = 1
+            }
+            return resultado
+        }
     </script>
 
 <!--[if gte mso 9]><xml>
